@@ -1,28 +1,26 @@
-/* PRODUCTOS */ 
-let productos = new Array();
-productos.push(new Producto("1", "Proteina","TRUEMADE WHEY PROTEIN", "ENA", 4400, "./assets/img/truemadeWheyProtein.jpg", true));
-productos.push(new Producto("2", "Proteina","100% WHEY PROTEIN", "ENA", 4000, "./assets/img/100whey.jpg", false));
-productos.push(new Producto("3", "Proteina","PLATINUM WHEY PROTEIN", "STAR NUTRITION", 4600, "./assets/img/proteinstar.jpg", false));
-productos.push(new Producto("4", "Creatina","CREA SHOCK","NUTRILAB", 2800, "./assets/img/creaShockNutrilab.png", false));
-productos.push(new Producto("5", "Creatina","CREATINA MONOHIDRATO","STAR NUTRITION", 6000, "./assets/img/creatinastar.jpg", true));
-productos.push(new Producto("6", "Shaker","SHAKER","GOLD NUTRITION", 800, "./assets/img/shakerGold.png", true));
-productos.push(new Producto("7", "Shaker","SHAKER","XTRENGHT", 800, "./assets/img/shakerXtreght.png", false));
-productos.push(new Producto("8", "Preentreno","PREWAR", "ENA", 2800, "./assets/img/prewarEna.jpg", true));
-productos.push(new Producto("9", "Preentreno","PUMP V8","STAR NUTRITION", 3000, "./assets/img/pumpv8.jpg", true));
-productos.push(new Producto("10", "Ganador de peso", "MUTANT MASS 5KG","STAR NUTRITION", 8200, "./assets/img/mutantMass.jpg", true));
-productos.push(new Producto("11", "Ganador de peso","ULTRA MASS 1,5KG","ENA", 3800, "./assets/img/ultraMassEna.jpg", false));
-productos.push(new Producto("12", "Proteina","BARRAS PROTEICAS x20","GENTECH", 3200, "./assets/img/ironbarGentech.jpg", true));
-
+const url = "./assets/js/productos.json"
 let products = document.querySelector(".products");
 let carrito = [];
+let productos = [];
 
-document.addEventListener("DOMContentLoaded",()=>{
-    carrito = JSON.parse( localStorage.getItem('carrito') ) || [];
-    actualizarCarrito();
-})
+
+
+
+    document.addEventListener("DOMContentLoaded",()=>{
+        carrito = JSON.parse( localStorage.getItem('carrito') ) || [];
+
+        fetch(url)
+        .then(respuesta => respuesta.json())
+        .then(resultado =>{
+            productos = resultado.productos;
+
+            agregarProducto();
+        })
+        actualizarCarrito();
+    })
 
 /**Agregar los productos al HTML */
-    agregarProducto();
+    
     function agregarProducto() {
         for (let i = 0;i < productos.length; i++) {
             const {id,img,nombre,marca,precio } = productos[i]
@@ -50,7 +48,6 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 function addToCartClicked(id) {
     const prod = document.querySelector('#row_'+id);
-
     let producto = new cartProduct(id, 
         prod.querySelector('h5').textContent, 
     prod.querySelector('.product-price').textContent.substring(1,6), 
@@ -201,7 +198,7 @@ function mostrarCarrito(){
 
 /**Funcion para el boton comprar */
 function comprar() {
-    carrito.length > 0 ? alert("COMPRA REALIZADA CON EXITO!") : alert("No agregaste productos al carrito");
+    carrito.length > 0 ? console.log("COMPRA REALIZADA CON EXITO!") : console.log("No agregaste ningun producto al carrito");
     for(let i = 0; i < carrito.length; i++){
         carrito = carrito.filter( producto => producto[i] != producto[i]);
     }

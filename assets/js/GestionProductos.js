@@ -1,12 +1,10 @@
 class Producto {
-    constructor(id, tipo, nombre, marca, precio, img, stock) {
+    constructor(id, nombre, marca, precio, img) {
         this.id = id;
-        this.tipo = tipo;
         this.nombre = nombre;
         this.marca = marca;
         this.precio = parseFloat(precio);
         this.img = img;
-        this.stock = stock;
     }
 }
 

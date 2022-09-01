@@ -1,0 +1,88 @@
+{
+    "productos": [
+        {
+            "id":1,
+            "nombre":"TRUEMADE WHEY PROTEIN",
+            "marca":"ENA",
+            "precio":4400,
+            "img":"./assets/img/truemadeWheyProtein.jpg"
+        },
+        {
+            "id":2,
+            "nombre":"100% WHEY PROTEIN",
+            "marca":"ENA",
+            "precio":4000,
+            "img":"./assets/img/100whey.jpg"
+        },
+        {
+            "id":3,
+            "nombre":"PLATINUM WHEY PROTEIN",
+            "marca":"STAR NUTRITION",
+            "precio":4600,
+            "img":"./assets/img/proteinstar.jpg"
+        },
+        {
+            "id":4,
+            "nombre":"CREA SHOCK",
+            "marca":"NUTRILAB",
+            "precio":2800,
+            "img":"./assets/img/creaShockNutrilab.png"
+        },
+        {
+            "id":5,
+            "nombre":"CREATINA MONOHIDRATO",
+            "marca":"STAR NUTRITION",
+            "precio":6000,
+            "img":"./assets/img/creatinastar.jpg"
+        },
+        {
+            "id":6,
+            "nombre":"SHAKER",
+            "marca":"GOLD NUTRITION",
+            "precio":800,
+            "img":"./assets/img/shakerGold.png"
+        },
+        {
+            "id":7,
+            "nombre":"SHAKER",
+            "marca":"XTRENGHT",
+            "precio":800,
+            "img":"./assets/img/shakerXtreght.png"
+        },
+        {
+            "id":8,
+            "nombre":"PREWAR",
+            "marca":"ENA",
+            "precio":2800,
+            "img":"./assets/img/prewarEna.jpg"
+        },
+        {
+            "id":9,
+            "nombre":"PUMP V8",
+            "marca":"STAR NUTRITION",
+            "precio":3000,
+            "img":"./assets/img/pumpv8.jpg"
+        },
+        {
+            "id":10,
+            "nombre":"MUTANT MASS 5KG",
+            "marca":"STAR NUTRITION",
+            "precio":8200,
+            "img":"./assets/img/mutantMass.jpg"
+        },
+        {
+            "id":11,
+            "nombre":"ULTRA MASS 1,5KG",
+            "marca":"ENA",
+            "precio":3800,
+            "img":"./assets/img/ultraMassEna.jpg"
+        },
+        {
+            "id":12,
+            "nombre":"BARRAS PROTEICAS x20",
+            "marca":"GENTECH",
+            "precio":3200,
+            "img":"./assets/img/ironbarGentech.jpg"
+        }
+    ]
+}
