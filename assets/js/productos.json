@@ -1,13 +1,15 @@
 {
     "productos": [
         {
+            "tipo":"Proteina",
             "id":1,
             "nombre":"TRUEMADE WHEY PROTEIN",
             "marca":"ENA",
-            "precio":4400,
+            "precio":4800,
             "img":"./assets/img/truemadeWheyProtein.jpg"
         },
         {
+            "tipo":"Proteina",
             "id":2,
             "nombre":"100% WHEY PROTEIN",
             "marca":"ENA",
@@ -15,27 +17,31 @@
             "img":"./assets/img/100whey.jpg"
         },
         {
+            "tipo":"Proteina",
             "id":3,
             "nombre":"PLATINUM WHEY PROTEIN",
             "marca":"STAR NUTRITION",
-            "precio":4600,
+            "precio":5400,
             "img":"./assets/img/proteinstar.jpg"
         },
         {
+            "tipo":"Creatina",
             "id":4,
             "nombre":"CREA SHOCK",
             "marca":"NUTRILAB",
-            "precio":2800,
+            "precio":3000,
             "img":"./assets/img/creaShockNutrilab.png"
         },
         {
+            "tipo":"Creatina",
             "id":5,
             "nombre":"CREATINA MONOHIDRATO",
             "marca":"STAR NUTRITION",
-            "precio":6000,
+            "precio":7000,
             "img":"./assets/img/creatinastar.jpg"
         },
         {
+            "tipo":"Shaker",
             "id":6,
             "nombre":"SHAKER",
             "marca":"GOLD NUTRITION",
@@ -43,6 +49,7 @@
             "img":"./assets/img/shakerGold.png"
         },
         {
+            "tipo":"Shaker",
             "id":7,
             "nombre":"SHAKER",
             "marca":"XTRENGHT",
@@ -50,27 +57,31 @@
             "img":"./assets/img/shakerXtreght.png"
         },
         {
+            "tipo":"Preentreno",
             "id":8,
             "nombre":"PREWAR",
             "marca":"ENA",
-            "precio":2800,
+            "precio":3000,
             "img":"./assets/img/prewarEna.jpg"
         },
         {
+            "tipo":"Preentreno",
             "id":9,
             "nombre":"PUMP V8",
             "marca":"STAR NUTRITION",
-            "precio":3000,
+            "precio":3600,
             "img":"./assets/img/pumpv8.jpg"
         },
         {
+            "tipo":"Proteina",
             "id":10,
             "nombre":"MUTANT MASS 5KG",
             "marca":"STAR NUTRITION",
-            "precio":8200,
+            "precio":10000,
             "img":"./assets/img/mutantMass.jpg"
         },
         {
+            "tipo":"Proteina",
             "id":11,
             "nombre":"ULTRA MASS 1,5KG",
             "marca":"ENA",
@@ -78,11 +89,44 @@
             "img":"./assets/img/ultraMassEna.jpg"
         },
         {
+            "tipo":"Proteina",
             "id":12,
             "nombre":"BARRAS PROTEICAS x20",
             "marca":"GENTECH",
-            "precio":3200,
+            "precio":3500,
             "img":"./assets/img/ironbarGentech.jpg"
+        },
+        {
+            "tipo":"Creatina",
+            "id":13,
+            "nombre":"CREATINA",
+            "marca":"BODY ADVANCE",
+            "precio":3500,
+            "img":"./assets/img/creabody.png"
+        },
+        {
+            "tipo":"Creatina",
+            "id":14,
+            "nombre":"CREATINA MICRONIZADA",
+            "marca":"ENA",
+            "precio":6600,
+            "img":"./assets/img/creaena.png"
+        },
+        {
+            "tipo":"Proteina",
+            "id":15,
+            "nombre":"WHEY PROTEIN 7900",
+            "marca":"GENTECH",
+            "precio":3600,
+            "img":"./assets/img/Proteinagentech.png"
+        },
+        {
+            "tipo":"Shaker",
+            "id":16,
+            "nombre":"SHAKER PREMIUM",
+            "marca":"ENA",
+            "precio":1700,
+            "img":"./assets/img/shakerpremiumena.png"
         }
     ]
 }

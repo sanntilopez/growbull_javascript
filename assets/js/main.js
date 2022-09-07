@@ -2,7 +2,16 @@ const url = "./assets/js/productos.json"
 let products = document.querySelector(".products");
 let carrito = [];
 let productos = [];
+let filtrosTipo = document.getElementsByClassName("filtrosTipo");
+let filtrosMarca = document.getElementsByClassName("filtrosMarca");
+let filtros = document.getElementsByClassName("filtros");
+let checkboxList = document.querySelector(".checkboxList");
+let checkboxListResponsive = document.querySelector(".checkboxListResponsive");
+let btnFilters = document.querySelector(".btnFilters");
+let btnFiltersResponsive = document.querySelector(".btnFiltersResponsive");
 
+let filtroPor = document.querySelector(".filtroPor");
+let productosFiltrados
 
 
 
@@ -13,23 +22,101 @@ let productos = [];
         .then(respuesta => respuesta.json())
         .then(resultado =>{
             productos = resultado.productos;
-
-            agregarProducto();
+            crearFiltro()
+            filtrar();
+            agregarProducto(productos);
         })
         actualizarCarrito();
     })
+    
 
 /**Agregar los productos al HTML */
+
+function crearFiltro(){
+    let marcas = Array.from(new Set(productos.map((el) => el.marca)));
+    let tipos = Array.from(new Set(productos.map((el) => el.tipo)));
+
+    for(let i = 0 ; i<tipos.length ; i++) {
+        let filtro = `
+        <li>
+            <input id="${tipos[i]}" type="checkbox" value="${tipos[i]}" class="filtrosTipo filtros">
+            <label for="${tipos[i]}">${tipos[i]}</label>
+        </li>`
+        checkboxList.innerHTML = checkboxList.innerHTML + filtro
+        checkboxListResponsive.innerHTML = checkboxListResponsive.innerHTML + filtro
+    }
     
-    function agregarProducto() {
-        for (let i = 0;i < productos.length; i++) {
-            const {id,img,nombre,marca,precio } = productos[i]
+    for(let i = 0 ; i<marcas.length ; i++) {
+        let filtro = `
+        <li>
+            <input id="${marcas[i]}" type="checkbox" value="${marcas[i]}" class="filtrosMarca filtros">
+            <label for="${marcas[i]}">${marcas[i]}</label>
+        </li>`
+        checkboxList.innerHTML = checkboxList.innerHTML + filtro
+        checkboxListResponsive.innerHTML = checkboxListResponsive.innerHTML + filtro
+    }
+}
+
+function filtrar(){
+    for (let i=0;i<filtrosTipo.length;i++){
+        filtrosTipo[i].addEventListener("click", () => {
+            if (filtrosTipo[i].checked){
+                productosFiltrados = productos.filter( prod => prod.tipo == filtrosTipo[i].value);
+                filtroClicked();
+            }
+        });}
+
+        for (let i=0;i<filtrosMarca.length;i++){
+            filtrosMarca[i].addEventListener("click", () => {
+                if (filtrosMarca[i].checked){
+                    productosFiltrados = productos.filter( prod => prod.marca == filtrosMarca[i].value );
+                    filtroClicked();
+                }
+            });}
+    }
+
+    function filtroClicked() {
+        products.innerHTML =""
+        agregarProducto(productosFiltrados)
+        checkboxList.hidden = true;
+        checkboxListResponsive.hidden = true;
+        btnFilters.hidden = false;
+        btnFiltersResponsive.hidden = false;
+        filtroPor.hidden = false;
+        filtroPor.innerHTML = `Filtrado por: ${filtro()}`;
+    }
+
+    function reiniciarFiltro() {
+        checkboxList.hidden = false;
+        checkboxListResponsive.hidden = false;
+        btnFilters.hidden = true;
+        btnFiltersResponsive.hidden = true;
+        filtroPor.hidden = true;
+        products.innerHTML ="";
+        agregarProducto(productos);
+        for (let i=0;i<filtros.length;i++){
+            filtros[i].checked = false
+        }
+    }
+
+    function filtro() {
+        for (let i=0;i<filtros.length;i++){
+            if (filtros[i].checked == true){
+                return filtros[i].value;
+            }
+        }
+    }
+
+    
+    function agregarProducto(productosFiltrados) {
+        for (let i = 0;i < productosFiltrados.length; i++) {
+            const {id,img,nombre,marca,precio } = productosFiltrados[i]
 
             let productbox = `
             <article class="col d-flex justify-content-center mb-4" id="row_${id}">
                     <div class="card shadow mb-1 p-2" style="width: 24rem;">
-                    <div class="d-flex justify-content-center" style="height: 300px;">
-                        <img src="${img}" class="" alt="producto" style="height: 100%">
+                    <div class="d-flex justify-content-center align-items-center" style="height: 300px;">
+                        <img src="${img}" class="" alt="producto" style="height: 90%">
                     </div>
                     <div class="card-body description d-flex flex-column justify-content-between">
                         <h5 class="card-title pt-2 product-name">${nombre} ${marca}</h5>
@@ -209,3 +296,5 @@ function guardarCarrito() {
     
     localStorage.setItem('carrito', JSON.stringify( carrito ));        
 }
+
+

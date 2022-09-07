@@ -1,0 +1,47 @@
+::-webkit-scrollbar{
+    display: none;
+}
+
+.checkboxList li {
+    padding: .5rem 0;
+}
+.checkboxList input:hover,.filtersList label:hover, .filtersList li:hover {
+    cursor: pointer;
+}
+
+footer a {
+    color: #dee2e6;
+    text-decoration: none;
+}
+.filters {
+    width: 15%;
+}
+
+.products {
+    width: 85%;
+}
+
+.filtersBtn {
+    display: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .checkboxList{
+        display: none;
+    }
+    .products {
+        width: 100%;
+    }
+    .filtersBtn {
+        display: block;
+    }
+    .filters{
+        width: 100%;
+    }
+    .productsBox {
+        flex-direction: column;
+    }
+    .filters h5{
+        display: none;
+    }
+}
