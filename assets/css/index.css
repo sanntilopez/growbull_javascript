@@ -38,6 +38,10 @@ footer a {
     justify-content: right;
 }
 
+.filtroPorResponsive {
+display: none;
+}
+
 .headerBuscador {
     width: 30%;
     padding: .3rem .5rem;
@@ -58,6 +62,9 @@ footer a {
 }
 
 @media screen and (max-width: 1200px) {
+    .filtroPorResponsive {
+    display:block;
+    }
     .btnFiltersResponsive{
         display: block;
     }
