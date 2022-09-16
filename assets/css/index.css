@@ -5,7 +5,7 @@
 .checkboxList li {
     padding: .5rem 0;
 }
-.checkboxList input:hover,.filtersList label:hover, .filtersList li:hover {
+.checkboxList input:hover,.checkboxList label:hover, .checkboxList li:hover {
     cursor: pointer;
 }
 
@@ -17,6 +17,10 @@ footer a {
     width: 15%;
 }
 
+.filtros {
+    border: 1px solid rgba(0, 0, 0, .25);
+}
+
 .products {
     width: 85%;
 }
@@ -25,7 +29,41 @@ footer a {
     display: none;
 }
 
+.btnFiltersResponsive {
+    display: none;
+}
+
+.sort{
+    display: flex;
+    justify-content: right;
+}
+
+.headerBuscador {
+    width: 30%;
+    padding: .3rem .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.headerBuscador input {
+    width: 100%;
+    border: none;
+    outline: none;
+}
+.headerBuscador button{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: none;
+}
+
 @media screen and (max-width: 1200px) {
+    .btnFiltersResponsive{
+        display: block;
+    }
+    .sort{
+        justify-content: space-between;
+    }
     .checkboxList{
         display: none;
     }
@@ -41,7 +79,10 @@ footer a {
     .productsBox {
         flex-direction: column;
     }
-    .filters h5{
+    .filters{
         display: none;
+    }
+    .headerBuscador {
+        width: 50%;
     }
 }
