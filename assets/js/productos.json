@@ -132,7 +132,7 @@
             "nombre":"WHEY PROTEIN 7900",
             "marca":"GENTECH",
             "precio":3600,
-            "img":"./assets/img/Proteinagentech.png",
+            "img":"./assets/img/proteinagentech.png",
             "stock":true
         },
         {
